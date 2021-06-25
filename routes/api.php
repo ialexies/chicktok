@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Api\ApiProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::prefix('products')->group(function () {
-    Route::get('/', [ProductController::class, 'index']);
-    Route::get('/test', [ProductController::class, 'test']);
+    Route::get('/', [ApiProductController::class, 'products']);
+    Route::get('/test', [ApiProductController::class, 'test']);
 });

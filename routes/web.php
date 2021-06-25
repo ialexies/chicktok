@@ -18,10 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products', [ProductController::class, 'index']);
+// Route::get('/products', [ProductController::class, 'index']);
 
-Route::prefix('products')->group(function () {
-    Route::get('/', [ProductController::class, 'index']);
-    Route::get('/test', [ProductController::class, 'test']);
-});
+// Route::prefix('products')->group(function () {
+//     Route::get('/', [ProductController::class, 'index']);
+//     Route::get('/test', [ProductController::class, 'test']);
+// });
 
+
+// Route::resource('products', [ProductController::class]);
+
+Route::resource('products', ProductController::class);

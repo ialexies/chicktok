@@ -18,8 +18,9 @@ class ProductController extends Controller
         //
         // return 'fdf';
         // $products = ProductResource::collection(Product::all());
-        $products = ProductResource::collection(Product::paginate(3));
-        return  $products ;
+        // $products = ProductResource::collection(Product::paginate(3));
+        // return  $products ;
+        return view('cms.products.index');
     }
     public function test()
     {
