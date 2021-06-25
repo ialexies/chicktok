@@ -18,4 +18,8 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function a_product_can_be_added(){
+        
+    }
 }
