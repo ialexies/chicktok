@@ -19,23 +19,37 @@ class ProductSeeder extends Seeder
         \App\Models\Product::create([
             'name'=>'Roast Chicken',
             'description'=>'Roasted chicken and marinated using secret ingredients',
-            'price'=>22511
+            'price'=>22511,
+            'stock'=>50,
+            'img'=>'product-roast-chicken.jpg'
         ]);
         \App\Models\Product::create([
             'name'=>'Frietzkn 8',
-            'price'=>35
+            'description'=>'Short Description of the product',
+            'price'=>35,
+            'stock'=>30,
+            'img'=>'product-roast-chicken.jpg'
         ]);
         \App\Models\Product::create([
             'name'=>'Fried Neck',
-            'price'=>15
+            'description'=>'Short Description of the product',
+            'price'=>15,
+            'stock'=>90,
+            'img'=>'product-roast-chicken.jpg'
         ]);
         \App\Models\Product::create([
             'name'=>'Balat',
-            'price'=>10
+            'description'=>'Short Description of the product',
+            'price'=>10,
+            'stock'=>10,
+            'img'=>'product-roast-chicken.jpg'
         ]);
         \App\Models\Product::create([
             'name'=>'Atsara',
-            'price'=>75
+            'description'=>'Short Description of the product',
+            'price'=>75,
+            'stock'=>50,
+            'img'=>'product-roast-chicken.jpg'
         ]);
     }
 }

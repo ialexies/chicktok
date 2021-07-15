@@ -22,7 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 });
 
-Route::prefix('products')->middleware('auth:api')->group(function () {
+// Route::prefix('products')->middleware('auth:api')->group(function () {
+Route::prefix('products')->group(function () {
     Route::get('/', [ApiProductController::class, 'products']);
     Route::get('/test', [ApiProductController::class, 'test']);
 });
