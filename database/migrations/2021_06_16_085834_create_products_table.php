@@ -19,7 +19,9 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->double('price');
-            $table->double('stock')->default(0);
+            // $table->double('stock')->default(0);
+            $table->double('qty_raw')->default(0);
+            $table->double('qty_cook')->default(0);
             $table->string('img')->nullable();
         });
     }

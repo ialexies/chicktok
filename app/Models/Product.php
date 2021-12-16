@@ -9,7 +9,9 @@ class Product extends Model
 {
     use HasFactory;
 
-
+	public function deliveries(){
+		return $this->belongsToMany('App\Models\Delivery');
+    }
     /**
      * The attributes that are mass assignable.
      *

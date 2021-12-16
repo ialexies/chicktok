@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         \App\Models\User::create([
             'name'=>'Alexies Iglesia',
             'email'=>'ialexies@gmail.com',
-            'password'=>bcrypt('alexies'),
+            'password'=>bcrypt('123456'),
             'created_at'=> Carbon::now(),
         	'updated_at'=> Carbon::now()
         ]);
