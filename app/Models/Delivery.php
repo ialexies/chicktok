@@ -9,7 +9,10 @@ class Delivery extends Model
 {
     use HasFactory;
     public function products(){
+// dd($this);
+     
         return $this->belongsToMany('App\Models\Product')->withPivot('quantity','created_at');
+        // return $this->hasMany('App\Models\Product')->withPivot('quantity','created_at');
     }
 
     protected $fillable = [

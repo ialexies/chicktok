@@ -33,6 +33,7 @@ Route::prefix('products')
 
 Route::prefix('delivery')->group(function() {
     Route::get('/', [ApiDeliveryController::class, 'deliveries']);
+    Route::post('/add', [ApiDeliveryController::class, 'store']);
     // Route::get('/', function() {
     //     return view('secrets');
     // });

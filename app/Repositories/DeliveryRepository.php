@@ -3,6 +3,7 @@ namespace App\Repositories;
 use App\Models\Delivery;
 // use App\Models\Delivery;
 
+use Illuminate\Http\Request;
 
 class DeliveryRepository implements DeliveryRepositoryInterface{
   protected $delivery;
@@ -26,4 +27,19 @@ class DeliveryRepository implements DeliveryRepositoryInterface{
     return $this->delivery->get();
     // return $this->delivery->get();
   }
+
+  public function store(Request $request){
+    $data = $request->request->all();
+    // dd($data);
+
+    return $data;
+    // dd($request->request);
+    // $data = $request->request;
+      // print($data);
+      // dd($request->request);
+      // $this->delivery->create($request->request);
+      // return $request
+   
+  }
+
 }

@@ -1,9 +1,9 @@
 <?php
 
 namespace Database\Seeders;
-use DB;
+// use DB;
 use Illuminate\Database\Seeder;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class DeliveryProductSeeder extends Seeder
 {
@@ -20,10 +20,7 @@ class DeliveryProductSeeder extends Seeder
             'product_id'=>1,
             'quantity'=>24,
         ]);
-        DB::table('delivery_product')->insert([
-            'delivery_id'=>1,
-            'quantity'=>40,
-        ]);
+
         DB::table('delivery_product')->insert([
             'delivery_id'=>1,
             'product_id'=>3,

@@ -14,9 +14,10 @@ class Delivery extends JsonResource
      */
     public function toArray($request)
     {
+        // print('fdf');
         // return parent::toArray($request);
-
-        // dd($this->products);
+// dd('fdf');
+// dd('fdf');
         return [
             'id'=>$this->id,
             'deliveredBy'=>$this->deliveredBy,
