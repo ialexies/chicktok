@@ -22,7 +22,6 @@ class DeliveryProductSeeder extends Seeder
         ]);
         DB::table('delivery_product')->insert([
             'delivery_id'=>1,
-            'product_id'=>2,
             'quantity'=>40,
         ]);
         DB::table('delivery_product')->insert([
