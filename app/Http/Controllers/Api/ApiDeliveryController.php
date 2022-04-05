@@ -24,31 +24,36 @@ class ApiDeliveryController extends Controller
         return  $deliveries ;
     }
     public function store(Request $request){
-        // dd($request->input('deliveredBy'));
-        // print($request);bnbn
-        // return   $request ;
-        $deliveries = DeliveryResource::collection($this->deliveryRepo->store($request));
-        $delivery = new Delivery();
-        $delivery->deliveredBy = $request->input('deliveredBy'); 
-        $delivery->recievedBy = $request->input('recievedBy');
-        $delivery->changeFund = $request->input('changeFund');
-        $delivery->note = $request->input('note');
-      
+     
+
+        try {
+            //code...
+
+            $delivery = new Delivery();
+            $delivery->deliveredBy = $request->input('deliveredBy'); 
+            $delivery->recievedBy = $request->input('recievedBy');
+            $delivery->changeFund = $request->input('changeFund');
+            $delivery->note = $request->input('note');
+            $delivery->save( );
+    
+            $products = json_decode(json_encode($request->input('products')));
+    
 
 
+            foreach ($products as $p) {
+                $deliveryproduct = new DeliveryProduct();
+                $deliveryproduct->delivery_id = $delivery->id;
+            
+                $deliveryproduct->product_id = $p->id;
+                $deliveryproduct->quantity = $p->quantity;
+                $deliveryproduct->save();
+                }
+        } catch (\Throwable $th) {
+            //throw $th;
+            return $th;
+        }
 
-$delivery->save( );
 
-$products = json_decode($request->input('products'));
-// dd($products);
-foreach ($products as $p) {
-    $deliveryproduct = new DeliveryProduct();
-    $deliveryproduct->delivery_id = $delivery->id;
-    // dd($p);
-    $deliveryproduct->product_id = $p->product_id;
-    $deliveryproduct->quantity = $p->quantity;
-    $deliveryproduct->save();
-    }
 
 
 // $delivery->
